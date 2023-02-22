@@ -1,7 +1,7 @@
 # .github
 ## GitHub Template Repo
 
-This repository store the DevXP-Tech workflow templates.
+This repository store the analect-io workflow templates.
 ## 🚦 Pipeline Workflow
 
 ```mermaid

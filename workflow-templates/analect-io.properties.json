@@ -1,6 +1,6 @@
 {
-    "name": "DevXP-Tech GoLang CICD",
-    "description": "DevXP-Tech Organization CI Workflow.",
+    "name": "analect-io GoLang CICD",
+    "description": "analect-io Organization CI Workflow.",
     "iconName": "example-icon",
     "categories": [
         "Go"
