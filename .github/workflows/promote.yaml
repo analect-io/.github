@@ -1,4 +1,4 @@
-name: GitOps Deploy 🏗️
+name: GitOps Promote 🏗️
 
 on:
   workflow_call:
@@ -35,16 +35,15 @@ jobs:
         kustomize-version: "3.9.4"
 
     - name: GitOps Checkout 🛎️
-      run: git clone https://${REPO_TOKEN}@github.com/analect-io/gitops.git .
+      run: git clone https://${REPO_TOKEN}@github.com/devxp-tech/gitops.git .
       env:
         REPO_TOKEN: ${{secrets.ACCESS_TOKEN_GITHUB}}
 
     - name: Update Docker Image Tag 🏷️
       run: |
-        cd apps/${{ inputs.repository }}/overlays/dev
-        OLD_TAG=$(cat kustomization.yaml | grep 'tag:' |  awk '{print $2}')
-        NEW_TAG=${{ inputs.tag }}
-        sed -i "s|$OLD_TAG|$NEW_TAG|g" kustomization.yaml
+        NEW_TAG=$(cat apps/${{ inputs.repository }}/overlays/dev/kustomization.yaml | grep 'tag:' |  awk '{print $2}')
+        OLD_TAG=$(cat apps/${{ inputs.repository }}/overlays/prd/kustomization.yaml | grep 'tag:' |  awk '{print $2}')
+        sed -i "s|$OLD_TAG|$NEW_TAG|g" apps/${{ inputs.repository }}/overlays/prd/kustomization.yaml
 
     - name: Commit and Push 🚀
       run: |
