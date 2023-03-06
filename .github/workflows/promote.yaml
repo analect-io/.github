@@ -53,5 +53,3 @@ jobs:
         git push https://${REPO_TOKEN}@github.com/analect-io/gitops.git
       env:
         REPO_TOKEN: ${{secrets.ACCESS_TOKEN_GITHUB}}
-      environment: 
-        name: '${{ inputs.environment }}'      
