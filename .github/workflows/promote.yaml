@@ -50,7 +50,7 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git commit -am "[ci skip] :robot: Set New Image Tag to https://github.com/${{ github.repository }}/commit/${{ inputs.tag }}"
-        git push https://$USERNAME:$REPO_KEY@github.com/analect-io/${{ github.repository }}.git
+        git push https://$USERNAME:$REPO_TOKEN@github.com/analect-io/${{ github.repository }}.git
       env:
         REPO_TOKEN: ${{secrets.ACCESS_TOKEN_GITHUB}}
         USERNAME: github-actions[bot]  
