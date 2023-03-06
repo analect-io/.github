@@ -52,4 +52,6 @@ jobs:
         git commit -am "[ci skip] :robot: Set New Image Tag to https://github.com/${{ github.repository }}/commit/${{ inputs.tag }}"
         git push
       env:
-        REPO_TOKEN: ${{secrets.ACCESS_TOKEN_GITHUB}}    
+        REPO_TOKEN: ${{secrets.ACCESS_TOKEN_GITHUB}}
+      environment: 
+        name: '${{ inputs.environment }}'      
