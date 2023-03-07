@@ -18,7 +18,10 @@ on:
       environment:
         description: "Set Project Environment"
         required: true  
-        type: string        
+        type: string
+    secrets:
+      ACCESS_TOKEN_GITHUB
+        required: true            
 
 jobs:
   deploy:
