@@ -20,7 +20,7 @@ on:
         required: true  
         type: string
     secrets:
-      ACCESS_TOKEN_GITHUB
+      ACCESS_TOKEN_GITHUB:
         required: true            
 
 jobs:
