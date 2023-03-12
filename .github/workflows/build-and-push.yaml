@@ -20,7 +20,7 @@ jobs:
         run: git show -s --format="%ai %H %s %aN" HEAD > rev.txt
 
       - name: Set backstage-integration-config.yaml
-        run: echo ${{ secrets.CONFIG_BACKSTAGE_GITHUB_APP }} | base64 -d > backstage-integration-config.yaml  
+        run: echo ${{ secrets.CONFIG_BACKSTAGE_GITHUB_APP }} | base64 -d > app/backstage-integration-config.yaml  
 
       - name: Set up QEMU 🛠️
         uses: docker/setup-qemu-action@v2
