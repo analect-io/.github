@@ -20,8 +20,11 @@ jobs:
         run: git show -s --format="%ai %H %s %aN" HEAD > rev.txt
 
       - name: backstage-integration-config
+        uses: actions/checkout@v3
+        env:
+          CONFIG_BACKSTAGE_GITHUB_APP: ${{ secrets.CONFIG_BACKSTAGE_GITHUB_APP }}
         run: |
-          echo ${{ secrets.CONFIG_BACKSTAGE_GITHUB_APP }} | base64 -d > /home/runner/backstage-integration-config.yaml
+          echo $CONFIG_BACKSTAGE_GITHUB_APP | base64 -d > /home/runner/backstage-integration-config.yaml
           cat /home/runner/backstage-integration-config.yaml
       
       - name: Set up QEMU 🛠️
